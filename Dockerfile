@@ -11,6 +11,8 @@ COPY default.conf /etc/nginx/conf.d/
 
 COPY gitconfig /etc/
 
+COPY nginx.conf /etc/nginx/
+
 COPY entrypoint.sh /usr/local/bin/
 
 VOLUME ["/srv/git"]
