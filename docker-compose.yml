@@ -1,0 +1,6 @@
+test_srv:
+  image: emarcs/nginx-git
+  ports:
+    - 8180:80
+  volumes:
+    - /srv/git:/srv/git
