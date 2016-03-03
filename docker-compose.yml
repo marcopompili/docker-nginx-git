@@ -4,3 +4,4 @@ test_srv:
     - 8180:80
   volumes:
     - /srv/git:/srv/git
+    - logs:/var/log/nginx

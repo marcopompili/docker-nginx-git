@@ -1,11 +1,15 @@
-FROM nginx
+FROM phusion/baseimage
 
 MAINTAINER Marco Pompili "marco.pompili@emarcs.org"
 
-RUN apt-get update && \
-    apt-get -q -y install fcgiwrap git cgit
+RUN apt-get -q -q update && \
+    apt-get -y install nginx fcgiwrap git
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir /srv/git
+
+RUN useradd nginx
 
 COPY default.conf /etc/nginx/conf.d/
 
@@ -13,8 +17,6 @@ COPY gitconfig /etc/
 
 COPY nginx.conf /etc/nginx/
 
-COPY entrypoint.sh /usr/local/bin/
+COPY 99_start.sh /etc/my_init.d/
 
-VOLUME ["/srv/git"]
-
-ENTRYPOINT ["entrypoint.sh"]
+VOLUME ["/srv/git", "/var/log/nginx"]
