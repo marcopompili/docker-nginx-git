@@ -7,9 +7,11 @@ RUN apt-get -q -q update && \
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN useradd nginx
+
 RUN mkdir /srv/git
 
-RUN useradd nginx
+VOLUME ["/srv/git", "/var/log/nginx"]
 
 COPY default.conf /etc/nginx/conf.d/
 
@@ -18,5 +20,3 @@ COPY gitconfig /etc/
 COPY nginx.conf /etc/nginx/
 
 COPY 99_start.sh /etc/my_init.d/
-
-VOLUME ["/srv/git", "/var/log/nginx"]
