@@ -19,4 +19,8 @@ COPY gitconfig /etc/
 
 COPY nginx.conf /etc/nginx/
 
+RUN sed -i '35iserver_tokens off;' /etc/nginx/nginx.conf
+
+COPY index.html /usr/share/nginx/html/
+
 COPY 99_start.sh /etc/my_init.d/
