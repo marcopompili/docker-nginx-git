@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM phusion/baseimage:0.9.22
 
 MAINTAINER Marco Pompili "docker@emarcs.org"
 
