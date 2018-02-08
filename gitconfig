@@ -1,3 +1,0 @@
-[http]
-        postBuffer = 524288000
-        receivepack = true

@@ -44,4 +44,6 @@ test_srv:
     - logs:/var/log/nginx
     # if you want to use a custom configuration
     - ./default.conf:/etc/nginx/conf.d/default.conf
+  environment:
+    GIT_POSTBUFFER: 1048576
 ```
