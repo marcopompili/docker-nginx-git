@@ -1,6 +1,6 @@
 FROM phusion/baseimage:0.9.22
 
-MAINTAINER Marco Pompili "docker@emarcs.org"
+MAINTAINER Marco Pompili "docker@mg.odd.red"
 
 RUN apt-get -q -q update && \
     apt-get -y install nginx fcgiwrap git
