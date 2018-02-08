@@ -42,8 +42,22 @@ test_srv:
   volumes:
     - /srv/git:/srv/git
     - logs:/var/log/nginx
+	# add your custom username and password (default is: admin, admin)
+	- ./htpasswd:/srv/htpasswd
     # if you want to use a custom configuration
     - ./default.conf:/etc/nginx/conf.d/default.conf
   environment:
     GIT_POSTBUFFER: 1048576
+```
+
+Test it:
+
+```shell
+git clone http://localhost:8180/myrepo.git
+```
+
+Default username and password are admin/admin. I strongly suggest you to update the htpasswd file with your password, like so:
+
+```shell
+htpasswd htpasswd admin
 ```
