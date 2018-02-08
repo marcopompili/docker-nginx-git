@@ -2,8 +2,6 @@
 
 Docker image for a Git HTTP server on Nginx.
 
-[![](https://badge.imagelayers.io/emarcs/nginx-git:latest.svg)](https://imagelayers.io/?images=emarcs/nginx-git:latest 'Get your own badge on imagelayers.io')
-
 This image is based on the [phusion/baseimage](https://github.com/phusion/baseimage-docker)
 base image for solving the PID 1 problem of Docker and for other factors.
 
