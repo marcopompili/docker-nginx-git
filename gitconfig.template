@@ -1,3 +1,2 @@
 [http]
         postBuffer = $GIT_POSTBUFFER
-	receivepack = true
