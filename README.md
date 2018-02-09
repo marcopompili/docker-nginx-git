@@ -42,8 +42,8 @@ test_srv:
   volumes:
     - /srv/git:/srv/git
     - logs:/var/log/nginx
-	# add your custom username and password (default is: admin, admin)
-	- ./htpasswd:/srv/htpasswd
+    # add your custom username and password (default is: admin, admin)
+    - ./htpasswd:/srv/htpasswd
     # if you want to use a custom configuration
     - ./default.conf:/etc/nginx/conf.d/default.conf
   environment:
