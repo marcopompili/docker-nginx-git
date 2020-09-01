@@ -1,5 +1,7 @@
 # docker-nginx-git
 
+[![](https://img.shields.io/docker/v/emarcs/nginx-git.svg)](https://hub.docker.com/r/emarcs/nginx-git) [![](https://img.shields.io/docker/image-size/emarcs/nginx-git)](https://hub.docker.com/r/emarcs/nginx-git) ![Pulls](https://img.shields.io/docker/pulls/emarcs/nginx-git.svg)
+
 Docker image for a Git HTTP server on Nginx.
 
 This image is based on the [phusion/baseimage](https://github.com/phusion/baseimage-docker)
