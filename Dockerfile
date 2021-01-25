@@ -3,7 +3,7 @@ FROM nginx:stable-alpine
 LABEL maintainer="emarcs"
 LABEL email="docker@mg.odd.red"
 
-RUN apk add --update --no-cache dumb-init spawn-fcgi fcgiwrap git
+RUN apk add --update --no-cache dumb-init spawn-fcgi fcgiwrap git-daemon
 
 RUN mkdir /srv/git
 
