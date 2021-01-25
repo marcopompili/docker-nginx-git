@@ -1,6 +1,6 @@
 FROM nginx:stable-alpine
 
-LABEL maintainer="Marco Pompili"
+LABEL maintainer="emarcs"
 LABEL email="docker@mg.odd.red"
 
 RUN apk add --update --no-cache dumb-init spawn-fcgi fcgiwrap git
@@ -18,8 +18,9 @@ COPY index.html /usr/share/nginx/html/
 
 ENV GIT_POSTBUFFER 1048576
 
-COPY init.sh /sbin
+COPY config.sh /
+COPY start.sh /
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
-CMD ["/sbin/init.sh"]
+CMD ["sh", "-c", "/config.sh && /start.sh"]
